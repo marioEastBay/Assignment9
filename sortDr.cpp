@@ -6,6 +6,9 @@
 #include <fstream>
 #include <iostream>
 #include <cstdlib>
+#include <thread>
+#include <chrono>
+#include <stdlib.h>
 const int SIZE = 50;
 #include "SelectionSort.h"
 #include "InsertionSort.h"
@@ -25,10 +28,11 @@ void Print(ofstream&, int[]);	// Prints array
 void InitValues(int[]);			// Creates random array 
 void CopyValues(int[], int[]);	// Makes a copy of random array
 
-void Swap(ItemType& item1, ItemType& item2);
 
 int main()
 {
+    chrono::time_point<chrono::system_clock> start;
+    chrono::time_point<chrono::system_clock> end;
 
   ifstream inFile;       // file containing operations
   ofstream outFile;      // file containing output
@@ -65,61 +69,94 @@ int main()
   { 
     if (command == "SelectionSort")
     {
-      SelectionSort(values, SIZE-1);
+        start = chrono::system_clock::now();           // Record start time
+        SelectionSort(values, SIZE-1);
+        end = chrono::system_clock::now();             // Record end time
+        chrono::duration<float> elapsed = end-start;   // Calculate and report time
       outFile << "Results from SelectionSort: " << endl;
+      outFile << "(Execution time in seconds = " << elapsed.count() << ")" << "\n";
       Print(outFile, values);
       outFile << endl;
     }
     else if (command == "BubbleSort")
     {
+        start = chrono::system_clock::now();           // Record start time
       BubbleSort(values, SIZE-1);
+        end = chrono::system_clock::now();             // Record end time
+        chrono::duration<float> elapsed = end-start;   // Calculate and report time
       outFile << "Results from BubbleSort: " << endl;
+        outFile << "(Execution time in seconds = " << elapsed.count() << ")" << "\n";
       Print(outFile, values);
       outFile << endl;
     }
     else if (command == "ShortBubble")
     {
+        start = chrono::system_clock::now();           // Record start time
       ShortBubble(values, SIZE-1);
+        end = chrono::system_clock::now();             // Record end time
+        chrono::duration<float> elapsed = end-start;   // Calculate and report time
       outFile << "Results from ShortBubble: " << endl;
+        outFile << "(Execution time in seconds = " << elapsed.count() << ")" << "\n";
       Print(outFile, values);
       outFile << endl;
     } 
     else if (command == "MergeSort")
     {
+        start = chrono::system_clock::now();           // Record start time
       MergeSort(values, 0,  SIZE-1);
+        end = chrono::system_clock::now();             // Record end time
+        chrono::duration<float> elapsed = end-start;   // Calculate and report time
       outFile << "Results from MergeSort: " << endl;
+        outFile << "(Execution time in seconds = " << elapsed.count() << ")" << "\n";
       Print(outFile, values);
       outFile << endl;
     }  
     else if (command == "QuickSort")
     {
+        start = chrono::system_clock::now();           // Record start time
       QuickSort(values,  0, SIZE-1);
+        end = chrono::system_clock::now();             // Record end time
+        chrono::duration<float> elapsed = end-start;   // Calculate and report time
       outFile << "Results from QuickSort: " << endl;
+        outFile << "(Execution time in seconds = " << elapsed.count() << ")" << "\n";
       Print(outFile, values);
       outFile << endl;
     }
     else if (command == "QuickSort2") 
     {
+        start = chrono::system_clock::now();           // Record start time
       QuickSort2(values, 0,  SIZE-1);
+        end = chrono::system_clock::now();             // Record end time
+        chrono::duration<float> elapsed = end-start;   // Calculate and report time
       outFile << "Results from QuickSort2: " << endl;
+        outFile << "(Execution time in seconds = " << elapsed.count() << ")" << "\n";
       Print(outFile, values);
       outFile << endl;
     }
      else if (command == "InsertionSort")
     {
+        start = chrono::system_clock::now();           // Record start time
       InsertionSort(values,  SIZE-1);
+        end = chrono::system_clock::now();             // Record end time
+        chrono::duration<float> elapsed = end-start;   // Calculate and report time
       outFile << "Results from InsertionSort: " << endl;
+        outFile << "(Execution time in seconds = " << elapsed.count() << ")" << "\n";
       Print(outFile, values);
       outFile << endl;
     }
     else if (command == "HeapSort")
     {
+        start = chrono::system_clock::now();           // Record start time
       HeapSort(values, SIZE);
+        end = chrono::system_clock::now();             // Record end time
+        chrono::duration<float> elapsed = end-start;   // Calculate and report time
       outFile << "Results from HeapSort: " << endl;
+        outFile << "(Execution time in seconds = " << elapsed.count() << ")" << "\n";
       Print(outFile, values);
       outFile << endl;
     }  
     else if (command ==  "Refresh")
+
       CopyValues(copyValues, values);
     else if (command == "ReInitialize")
     {
@@ -162,15 +199,6 @@ void Print(ofstream& outFile, int values[])
     
 }      
 
-void Swap(ItemType& item1, ItemType& item2)
-// Post: Contents of item1 and item2 have been swapped.
-{
-  ItemType tempItem;
-
-  tempItem = item1;
-  item1 = item2;
-  item2 = tempItem;
-}
 
 void CopyValues(int inData[], int outData[])
 {

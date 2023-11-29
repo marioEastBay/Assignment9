@@ -1,4 +1,25 @@
 typedef int ItemType;
+
+
+template<class ItemType>
+void BubbleUp2(ItemType values[], int startIndex, int endIndex,
+               bool& sorted)
+// Post: Adjacent pairs that are out of order have been switched
+//       between values[startIndex]..values[endIndex] beginning at
+//       values[endIndex].
+//       sorted is false if a swap was made; otherwise, true.
+{
+    sorted = true;
+    for (int index = endIndex; index > startIndex; index--)
+        if (values[index] < values[index-1])
+        {
+            Swap(values[index], values[index-1]);
+            sorted = false;
+        }
+}
+
+
+
 template<class ItemType>
 void ShortBubble(ItemType values[], int numValues)
 // Post: The elements in the array values are sorted by key.
@@ -14,20 +35,4 @@ void ShortBubble(ItemType values[], int numValues)
 }
 
 
-template<class ItemType>
-void BubbleUp2(ItemType values[], int startIndex, int endIndex,
-     bool& sorted)
-// Post: Adjacent pairs that are out of order have been switched 
-//       between values[startIndex]..values[endIndex] beginning at 
-//       values[endIndex].
-//       sorted is false if a swap was made; otherwise, true.
-{
-  sorted = true;
-  for (int index = endIndex; index > startIndex; index--)
-    if (values[index] < values[index-1])
-    {
-      Swap(values[index], values[index-1]);
-      sorted = false;
-    }
-}
 

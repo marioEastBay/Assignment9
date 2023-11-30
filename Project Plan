@@ -27,11 +27,12 @@ Dequeue, Merge, MergeSort, InsertItem, InsertionSort, ReheapDown, HeapSort, Bubb
 
 Functions: while, do-while, if-else, for, ifstream, ofstream, dequeue, enqueue, sorting algorithm functions, Nodes
 
-Quick sort was the fastest. Bubble sort was the slowest.
-This reason might depend on each algorithm's time complexity.
 
-Why one algorithm runs slow or faster than other algorithms
-Explain why
+Quick sort was the fastest. Bubble sort was the slowest.
+Rank/level from fastest to slowest:
+QuickSort, QuickSort2, MergeSort, HeapSort, InsertionSort, SelectionSort, BubbleSort
+The reason for why some algorithms are faster or slower than other algorithms
+might be due to each algorithm's time complexity.
 
 
 Logic we tried to implement:

@@ -25,7 +25,10 @@ Class names: CopyValues, Print, InitValues, BubbleUp2, ShortBubble, Swap, MinInd
 CollectQueues, Split2, QuickSort2, Split, QuickSort, QueType, MakeEmpty, IsFull(), IsEmpty(), Enqueue, 
 Dequeue, Merge, MergeSort, InsertItem, InsertionSort, ReheapDown, HeapSort, BubbleUp, and BubbleSort
 
-Functions: while, do-while, for, ifstream, ofstream, dequeue, enqueue, sorting algorithm functions, Nodes
+Functions: while, do-while, if-else, for, ifstream, ofstream, dequeue, enqueue, sorting algorithm functions, Nodes
+
+Quick sort was the fastest. Bubble sort was the slowest.
+This reason might depend on each algorithm's time complexity.
 
 Why one algorithm runs slow or faster than other algorithms
 Explain why

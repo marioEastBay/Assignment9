@@ -13,8 +13,12 @@ The program prompts for the file names, to read the file names, and prepares the
 
 
 Expectations: 
-We expect the program to...
-We expect the program to run successfully...
+We expect the program to compare the different sorting algorithms and the driver file to time each run. 
+The driver file will read from an input file for commands. 
+The program prompts for the name of the input file, name of the output file, and the name of the run. 
+The program then calls the sorts and displays the results in the output file. 
+The driver shows the time it took for each sort to complete. 
+We expect the program to run successfully and to display an output file for the sorting algorithms.
 
 
 Class names: 

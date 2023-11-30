@@ -8,7 +8,8 @@ Assignment 9 Project Plan
 
 
 Test cases: 20
-We tested the sortDr.cpp file which is the tester for the sorting algortihms. 
+We tested the sortDr.cpp file which is the tester for the sorting algortihms.
+The program prompts for the file names, to read the file names, and prepares the files. 
 
 
 Expectations: 

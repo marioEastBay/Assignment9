@@ -21,7 +21,9 @@ The driver shows the time it took for each sort to complete.
 We expect the program to run successfully and to display an output file for the sorting algorithms.
 
 
-Class names: 
+Class names: CopyValues, Print, InitValues, BubbleUp2, ShortBubble, Swap, MinIndex, SelectionSort, RadixSort, 
+CollectQueues, Split2, QuickSort2, Split, QuickSort, QueType, MakeEmpty, IsFull(), IsEmpty(), Enqueue, 
+Dequeue, Merge, MergeSort, InsertItem, InsertionSort, ReheapDown, HeapSort, BubbleUp, and BubbleSort
 
 Functions: 
 

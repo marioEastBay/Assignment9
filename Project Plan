@@ -9,30 +9,53 @@ Assignment 9 Project Plan
 
 Test cases: 20
 We tested the sortDr.cpp file which is the tester for the sorting algortihms.
-The program prompts for the file names, to read the file names, and prepares the files. 
+The program prompts for the file names, reads the file names, and prepares the files. 
 
 
 Expectations: 
 We expect the program to compare the different sorting algorithms and the driver file to time each run. 
-The driver file will read from an input file for commands. 
+The driver file reads from an input file for commands. 
 The program prompts for the name of the input file, name of the output file, and the name of the run. 
 The program then calls the sorts and displays the results in the output file. 
 The driver shows the time it took for each sort to complete. 
-We expect the program to run successfully and to display an output file for the sorting algorithms.
+We expect the program to run successfully and to display the output file. 
 
 
 Class names: CopyValues, Print, InitValues, BubbleUp2, ShortBubble, Swap, MinIndex, SelectionSort, RadixSort, 
 CollectQueues, Split2, QuickSort2, Split, QuickSort, QueType, MakeEmpty, IsFull(), IsEmpty(), Enqueue, 
-Dequeue, Merge, MergeSort, InsertItem, InsertionSort, ReheapDown, HeapSort, BubbleUp, and BubbleSort
+Dequeue, Merge, MergeSort, InsertItem, InsertionSort, ReheapDown, HeapSort, BubbleUp, BubbleSort
 
-Functions: while, do-while, if-else, for, ifstream, ofstream, dequeue, enqueue, sorting algorithm functions, Nodes
+Functions: while, do-while, if-else, for, ifstream, ofstream, dequeue, enqueue, sorting algorithm functions, nodes
 
 
 Quick sort was the fastest. Bubble sort was the slowest.
 Rank/level from fastest to slowest:
-QuickSort, QuickSort2, MergeSort, HeapSort, InsertionSort, SelectionSort, BubbleSort
-The reason for why some algorithms are faster or slower than other algorithms
-might be due to each algorithm's time complexity.
+QuickSort (O(nlogn)), MergeSort (O(nlogn)), HeapSort (O(nlogn)), QuickSort2 (O(nlogn)), 
+InsertionSort (O(n^2)), SelectionSort (O(n^2)), BubbleSort (O(n^2))
+
+The reason for why some algorithms are faster or slower compared to the other algorithms
+might be due to the algorithm's time complexity.
+
+QuickSort is generally faster since it has good cache performance and can be easily parallelized. 
+QuickSort divides the array into sub-arrays and sorts them independently.
+
+MergeSort is a stable sort and works well on linked lists. It divides the array into two halves, 
+sorts each half, and then merges them.
+
+HeapSort uses a binary heap data structure to build a max-heap or min-heap and then sorts the array. 
+
+QuickSort2 is an improved version of QuickSort. It optimizes for the case where many elements are equal 
+and uses different partitioning techniques.
+
+InsertionSort is efficient for small data sets. It builds the final sorted array one item at a time. 
+The main advantage is that it is adaptive. For example, it is efficient for data sets that are already partially sorted.
+
+SelectionSort is not as fast on large lists as more advanced algorithms.
+It is inefficient on large lists and generally performs worse than the similar insertion sort.
+
+BubbleSort is a simple sorting algorithm. It works by repeatedly swapping adjacent elements if 
+they are in the wrong order. While simple, it is inefficient for large lists and generally performs 
+worse than the other algorithms.
 
 
 Logic we tried to implement:
